@@ -1,0 +1,11 @@
+**/__pycache__
+*.pyc
+.vs
+venv
+.env
+oc-lettings-site.sqlite3
+.pytest_cache
+sqldiff.exe
+sqlite3.exe
+sqlite3_analyzer.exe
+
