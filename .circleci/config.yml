@@ -52,15 +52,15 @@ jobs:
             - checkout
             - setup_remote_docker
             - run:
-                name: connection à Docker hub
+                name: connection ï¿½ Docker hub
                 command: echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_USER_ID" --password-stdin   # circle ci
 
             - run: 
                 name: Build Docker image
-                command: docker build -t lou57810/ocr-docker-build .        # $name_image à rajouter dans circleci
+                command: docker build -t lou57810/oc-lettings-site .   # $name_image ï¿½ rajouter dans circleci
             - run:
                 name: Push docker hub image
-                command: docker push lou57810/ocr-docker-build
+                command: docker push lou57810/oc-lettings-site
 
     deploy-to-render:
         docker:
