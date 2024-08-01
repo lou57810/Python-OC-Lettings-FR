@@ -1,6 +1,7 @@
 **/__pycache__
 *.pyc
 .vs
+.idea
 venv
 .env
 oc-lettings-site.sqlite3
