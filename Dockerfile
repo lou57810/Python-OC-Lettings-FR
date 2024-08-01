@@ -22,7 +22,7 @@ WORKDIR /app
 RUN pip3 install --no-cache-dir -r /app/requirements.txt
 RUN python manage.py collectstatic --noinput
  
-# ADD oc-lettings-site.sqlite3 /app
+ADD oc-lettings-site.sqlite3 /app
 
 # volume:
 # 	- static: /static
