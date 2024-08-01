@@ -7,7 +7,7 @@ ENV PYTHONBUFFERED 1
 # Eviter les fichiers .pyc dans les containers --> ralentissements
 ENV PYTHONDONTWRITEBYTECODE 1
 
-# Installer les dépendances système nécessaires
+# Installer les dï¿½pendances systï¿½me nï¿½cessaires
 # RUN apt-get update && \
     # apt-get install -y build-essential libffi-dev libpq-dev libssl-dev && \
     # apt-get clean
@@ -22,7 +22,7 @@ WORKDIR /app
 RUN pip3 install --no-cache-dir -r /app/requirements.txt
 RUN python manage.py collectstatic --noinput
  
-ADD oc-lettings-site.sqlite3 /app
+# ADD oc-lettings-site.sqlite3 /app
 
 # volume:
 # 	- static: /static
