@@ -27,7 +27,7 @@ ADD oc-lettings-site.sqlite3 /app
 # volume:
 # 	- static: /static
 
-ENV SENTRY_DSN="https://7a43cfd6cd09fa8a09e97279d8f37881@o4506869492940800.ingest.us.sentry.io/4507153243963392"
+ENV SENTRY_DSN="https://aedc5b0d4837c53b14cf2474580dcba5@o4506869492940800.ingest.us.sentry.io/4507702300966912"
 ENV SENTRY_ENVIRONMENT=production
 
 
