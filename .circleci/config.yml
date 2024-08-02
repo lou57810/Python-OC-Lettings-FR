@@ -57,10 +57,10 @@ jobs:
 
             - run: 
                 name: Build Docker image
-                command: docker build -t lou57810/oc-lettings-site .        # $name_image � rajouter dans circleci
+                command: docker build -t lou57810/oc-lettings-site-build .        # $name_image � rajouter dans circleci
             - run:
                 name: Push docker hub image
-                command: docker push lou57810/oc-lettings-site
+                command: docker push lou57810/oc-lettings-site-build
 
     deploy-to-render:
         docker:
