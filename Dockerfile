@@ -32,6 +32,6 @@ ENV SENTRY_ENVIRONMENT=production
 
 
 # specify the port number the container should expose
-EXPOSE 8000
+EXPOSE 8000:8000
 
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "oc_lettings_site.wsgi:application"]
