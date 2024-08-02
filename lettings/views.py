@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Letting
 from sentry_sdk import capture_message, capture_exception, set_tag
-from django.http import Http404
+# from django.http import Http404
 
 
 # Create your views here.
