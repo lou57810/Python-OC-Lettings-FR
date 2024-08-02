@@ -22,12 +22,10 @@ def home(request):
 # Sed non placerat massa. Integer est nunc, pulvinar a
 # tempor et, bibendum id arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
 # posuere cubilia curae; Cras eget scelerisque
-# def lettings_index(request):
+
 def index(request):
     lettings_list = Letting.objects.all()
     context = {'lettings_list': lettings_list}
-    # return render(request, 'lettings/lettings_index.html', context)
-    # return render(request, 'lettings/index.html', context)
     return render(request, 'lettings/index.html', context)
 
 
@@ -46,16 +44,12 @@ def index(request):
 
 
 def letting(request, letting_id):
-
     try:
         letting = Letting.objects.get(id=letting_id)
     except Exception as e:
-        # Alternatively the argument can be omitted
         set_tag("letting", f"L'utilisateur {request.user} a voulu consulter un id: {letting_id} inexistant!")
         capture_exception(e)
-        # return render(request, 'error404.html')
-        raise Http404("Page not found")
-
+        return render(request, 'error404.html')
     context = {
         'title': letting.title,
         'address': letting.address,

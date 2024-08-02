@@ -1,5 +1,4 @@
 from django.urls import path
-# import profiles.views
 from . import views
 
 

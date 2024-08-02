@@ -38,8 +38,6 @@ def profile(request, username):
     try:
         profile = Profile.objects.get(user__username=username)
     except Exception as e:
-        # Alternatively the argument can be omitted
-
         set_tag("profile", f"L'utilisateur {request.user} a consulte un profil: {username} inexistant!")
         capture_exception(e)
         return render(request, 'error404.html')

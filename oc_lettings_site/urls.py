@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
 from . import views
-from django.conf.urls import handler404, handler500
+# from django.conf.urls import handler404, handler500
 
 
 import time
@@ -10,7 +10,7 @@ from oc_lettings_site.views import index
 
 
 # def trigger_error(request):
-    # raise Exception("This is a test error")
+# raise Exception("This is a test error")
 
 
 def large_resource(request):
