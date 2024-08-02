@@ -4,7 +4,6 @@
 .idea
 venv
 .env
-oc-lettings-site.sqlite3
 .pytest_cache
 sqldiff.exe
 sqlite3.exe
