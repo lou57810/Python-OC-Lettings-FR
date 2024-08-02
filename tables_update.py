@@ -12,7 +12,7 @@ def create_temp_path():
     path_csv = 'data_csv'
     try:
         os.mkdir(path_csv)
-        # print("Folder %s created!" % path_csv)
+        print("Folder %s created!" % path_csv)
         # check whether directory already exists
     except FileExistsError:
         print("Folder %s already exists" % path_csv)
@@ -35,7 +35,6 @@ def data_exchange(src, dst):
     # Extract :
     connection = sqlite3.connect(path_db)
     data = pd.read_sql_query(f"SELECT * FROM {src}", connection)
-    # print('data', data)
 
     name = src
     new = name.split('_')
