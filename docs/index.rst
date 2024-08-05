@@ -2,7 +2,6 @@
    sphinx-quickstart on Tue Jul 30 18:52:36 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-<meta charset="utf-8" />
 
 Bienvenue dans la documentation de Orange County Lettings!
 ==========================================================
