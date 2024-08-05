@@ -5,10 +5,9 @@ from django.contrib.auth.models import User
 from lettings.models import Address, Letting
 
 
-# Test Affichage:
-@pytest.mark.django_db
+@pytest.mark.django_db  # Crée une database temporaire nulle en fin de test.
 class HomePageTest(TestCase):
-
+    """ Tests Endpoints """
     def test_home_page_status_code(self):
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
@@ -20,7 +19,7 @@ class HomePageTest(TestCase):
 
 @pytest.mark.django_db
 class LettingPageTest(TestCase):
-
+    """ Tests Endpoints """
     def test_letting_page_status_code(self):
         response = self.client.get(reverse('lettings_index'))
         self.assertEqual(response.status_code, 200)
