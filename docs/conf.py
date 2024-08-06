@@ -6,7 +6,13 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'oc-lettings-site'
+import os
+import sys
+
+
+sys.path.insert(0, os.path.abspath('../'))
+
+project = 'Python-OC-Lettings-FR'
 copyright = '2024, OC_Ben'
 author = 'OC_Ben'
 release = '1.0.0'
