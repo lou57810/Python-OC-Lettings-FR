@@ -21,6 +21,7 @@ Si vous utilisez Render comme solution de déploiement, veillez à désactiver l
 Documentation de l'application.
 -------------------------------
 SPHINX:
+-------
 Récupération sphinx avec pip install (voir requirements.txt)
 Création du dossier docs, puis dans ce dossier lancer:
 sphinx-quickstart
@@ -32,7 +33,12 @@ et exclure les fichier inutiles. (ex: tables_update.py qui va créer des erreurs
 de compilation.
 Revenir dans le dossier racine du projet et lancer la commande:
 sphinx-apidoc -o docs sphinx_src
-
 A partir de _build/html/index.html nous pouvons alors avoir accès à la documentation du projet avec le navigateur.
+
+La phase suivante est d'enregistrer le projet sur readthedocs:
+Il s'agit simplement de référencer le projet github sur readthedocs et de valider la compilation.
+Readthedocs propose le lien qui va permettre de visualiser les arcanes du projet.
+
+
 
 Mise à jour auto à chaque modif.
