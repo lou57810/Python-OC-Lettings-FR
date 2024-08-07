@@ -9,6 +9,7 @@
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
   
+    <link rel="shortcut icon" href="_static/favicon.png"/>
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -22,7 +23,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="oc_lettings_site" href="modules.html" />
+    <link rel="next" title="src" href="modules.html" />
     <link rel="prev" title="Amélioration de l’architecture modulaire." href="page1.html" /> 
 </head>
 
@@ -36,6 +37,7 @@
           
           <a href="index.html" class="icon icon-home">
             Python-OC-Lettings-FR
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -54,7 +56,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#documentation-de-l-application">Documentation de l’application.</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">oc_lettings_site</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">src</a></li>
 </ul>
 
         </div>
@@ -103,6 +105,16 @@ Si vous utilisez Render comme solution de déploiement, veillez à désactiver l
 </section>
 <section id="documentation-de-l-application">
 <h2>Documentation de l’application.<a class="headerlink" href="#documentation-de-l-application" title="Lien vers cette rubrique"></a></h2>
+<p>SPHINX:
+Récupération sphinx avec pip install (voir requirements.txt)
+Création du dossier docs, puis dans ce dossier lancer:
+sphinx-quickstart
+Congiguration avec config.py
+Complèter index.rst et eventuellement ajouter d’autres pages.rst (ReStructuredText files).
+Valider avec la commande: make html ou (git bash: ./make.bat html)
+Revenir dans le dossier racine du projet et lancer la commande:
+sphinx-apidoc -o docs .</p>
+<p>A partir de _build/html/index.html nous pouvons alors avoir accès à la documentation du projet avec le navigateur.</p>
 <p>Mise à jour auto à chaque modif.</p>
 </section>
 </section>
@@ -112,13 +124,13 @@ Si vous utilisez Render comme solution de déploiement, veillez à désactiver l
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="page1.html" class="btn btn-neutral float-left" title="Amélioration de l’architecture modulaire." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="modules.html" class="btn btn-neutral float-right" title="oc_lettings_site" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modules.html" class="btn btn-neutral float-right" title="src" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Droits d'auteur 2024, OC_Ben.</p>
+    <p>&#169; Droits d'auteur 2024, Ben_Oc.</p>
   </div>
 
   Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un

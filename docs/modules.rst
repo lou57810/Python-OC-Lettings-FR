@@ -1,7 +1,10 @@
-oc_lettings_site
-================
+src
+===
 
 .. toctree::
    :maxdepth: 4
 
+   lettings
    oc_lettings_site
+   profiles
+   tests
