@@ -7,11 +7,14 @@ Welcome to Python-OC-Lettings-FR's documentation!
 =================================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
    :caption: Contents:
 
    page1.rst
    page2.rst
+   page3.rst
+   page4.rst
+   page5.rst
 
    modules
 
