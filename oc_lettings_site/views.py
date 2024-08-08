@@ -1,4 +1,3 @@
-# from django.http import HttpResponseNotFound
 from sentry_sdk import capture_message
 from django.shortcuts import render
 

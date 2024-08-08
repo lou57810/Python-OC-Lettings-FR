@@ -35,31 +35,35 @@ def data_exchange(src, dst):
     connection = sqlite3.connect(path_db)
     data = pd.read_sql_query(f"SELECT * FROM {src}", connection)
 
-    name = src
-    new = name.split('_')
-    new_name = new[-1]
-    csv = path_csv + f'{new_name}.csv'
+    if src is not None:
+        name = src
+        new = name.split('_')
+        new_name = new[-1]
+        csv = path_csv + f'{new_name}.csv'
 
-    # Transform to CSV
-    data.to_csv(csv, index=False)
+        # Transform to CSV
+        data.to_csv(csv, index=False)
 
-    # Transfer to existing table
-    connection = sqlite3.connect(path_db)
-    data = pd.read_csv(csv)
-    data.to_sql(dst, connection, if_exists='replace', index=False)
-    connection.close()
+        # Transfer to existing table
+        connection = sqlite3.connect(path_db)
+        data = pd.read_csv(csv)
+        data.to_sql(dst, connection, if_exists='replace', index=False)
+        connection.close()
+    else:
+        print('oc_lettings_site models were priviously exchanged!')
 
 
 def drop_old_datas():
     # Extract :
     connection = sqlite3.connect(path_db)
-
-    # drop old table
-    connection.execute("DROP TABLE oc_lettings_site_address")
-    connection.execute("DROP TABLE oc_lettings_site_letting")
-    connection.execute("DROP TABLE oc_lettings_site_profile")
-    print("data dropped successfully")
-
+    try:
+        # drop old table
+        connection.execute("DROP TABLE oc_lettings_site_address")
+        connection.execute("DROP TABLE oc_lettings_site_letting")
+        connection.execute("DROP TABLE oc_lettings_site_profile")
+        print("data dropped successfully")
+    except Exception as e:
+        print(f"oc_lettings_site tables has been priviously destroyed! : {e}")
     # close the connection
     connection.close()
 
