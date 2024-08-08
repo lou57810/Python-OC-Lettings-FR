@@ -31,13 +31,13 @@ Valider avec la commande: make html ou (git bash: ./make.bat html)
 Création d'un dossier sphinx_src, afin de choisir les fichiers à afficher,
 et exclure les fichier inutiles. (ex: tables_update.py qui va créer des erreurs
 de compilation.
-Revenir dans le dossier racine du projet et lancer la commande:
-sphinx-apidoc -o docs sphinx_src
+Revenir dans le dossier racine du projet, lancer la commande:
+sphinx-apidoc -o docs sphinx_src pour pouvoir afficher l'ensemble des modules et fonctions.
 A partir de _build/html/index.html nous pouvons alors avoir accès à la documentation du projet avec le navigateur.
 
 La phase suivante est d'enregistrer le projet sur readthedocs:
 Il s'agit simplement de référencer le projet github sur readthedocs et de valider la compilation.
-Readthedocs propose le lien qui va permettre de visualiser les arcanes du projet.
+Readthedocs propose le lien qui va permettre de visualiser le projet sur la toile.
 
 
 

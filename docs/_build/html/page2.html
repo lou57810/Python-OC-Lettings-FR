@@ -54,9 +54,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#surveillance-de-l-application-et-des-erreurs-avec-sentry">Surveillance de l’application et des erreurs avec Sentry.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mise-en-place-du-deploiement-avec-docker-cicd-et-render">Mise en place du déploiement avec Docker, Cicd et Render.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#documentation-de-l-application">Documentation de l’application.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sphinx">SPHINX:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#sphinx">SPHINX:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">src</a></li>
 </ul>
 
@@ -107,9 +107,8 @@ Si vous utilisez Render comme solution de déploiement, veillez à désactiver l
 <section id="documentation-de-l-application">
 <h2>Documentation de l’application.<a class="headerlink" href="#documentation-de-l-application" title="Lien vers cette rubrique"></a></h2>
 </section>
-</section>
 <section id="sphinx">
-<h1>SPHINX:<a class="headerlink" href="#sphinx" title="Lien vers cette rubrique"></a></h1>
+<h2>SPHINX:<a class="headerlink" href="#sphinx" title="Lien vers cette rubrique"></a></h2>
 <p>Récupération sphinx avec pip install (voir requirements.txt)
 Création du dossier docs, puis dans ce dossier lancer:
 sphinx-quickstart
@@ -119,10 +118,14 @@ Valider avec la commande: make html ou (git bash: ./make.bat html)
 Création d’un dossier sphinx_src, afin de choisir les fichiers à afficher,
 et exclure les fichier inutiles. (ex: tables_update.py qui va créer des erreurs
 de compilation.
-Revenir dans le dossier racine du projet et lancer la commande:
-sphinx-apidoc -o docs sphinx_src</p>
-<p>A partir de _build/html/index.html nous pouvons alors avoir accès à la documentation du projet avec le navigateur.</p>
+Revenir dans le dossier racine du projet, lancer la commande:
+sphinx-apidoc -o docs sphinx_src pour pouvoir afficher l’ensemble des modules et fonctions.
+A partir de _build/html/index.html nous pouvons alors avoir accès à la documentation du projet avec le navigateur.</p>
+<p>La phase suivante est d’enregistrer le projet sur readthedocs:
+Il s’agit simplement de référencer le projet github sur readthedocs et de valider la compilation.
+Readthedocs propose le lien qui va permettre de visualiser le projet sur la toile.</p>
 <p>Mise à jour auto à chaque modif.</p>
+</section>
 </section>
 
 
