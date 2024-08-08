@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amélioration de l’architecture modulaire. &mdash; Documentation Python-OC-Lettings-FR 1.0.0</title>
+  <title>Documentation de l’application. &mdash; Documentation Python-OC-Lettings-FR 1.0.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -23,8 +23,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Résolution des problemes du projet." href="page2.html" />
-    <link rel="prev" title="Welcome to Python-OC-Lettings-FR’s documentation!" href="index.html" /> 
+    <link rel="next" title="src" href="modules.html" />
+    <link rel="prev" title="Mise en place Cicd" href="page4.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,16 +49,14 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Amélioration de l’architecture modulaire.</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#fork-et-clone-de-l-application">Fork et clone de l’application.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#lancement-et-test-de-l-application-en-local">Lancement et test de l’application en local.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#consulter-les-ressources-modification-des-fichiers-de-migration">Consulter les ressources, modification des fichiers de migration.</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="page1.html">Amélioration de l’architecture modulaire.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page2.html">Résolution des problemes du projet.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page3.html">Surveillance de l’application et des erreurs avec Sentry.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page4.html">Mise en place Cicd</a></li>
-<li class="toctree-l1"><a class="reference internal" href="page5.html">Documentation de l’application.</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation de l’application.</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sphinx">SPHINX:</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">src</a></li>
 </ul>
 
@@ -76,9 +74,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Amélioration de l’architecture modulaire.</li>
+      <li class="breadcrumb-item active">Documentation de l’application.</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/page1.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+            <a href="_sources/page5.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
   </ul>
   <hr/>
@@ -86,18 +84,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="amelioration-de-l-architecture-modulaire">
-<h1>Amélioration de l’architecture modulaire.<a class="headerlink" href="#amelioration-de-l-architecture-modulaire" title="Lien vers cette rubrique"></a></h1>
-<section id="fork-et-clone-de-l-application">
-<h2>Fork et clone de l’application.<a class="headerlink" href="#fork-et-clone-de-l-application" title="Lien vers cette rubrique"></a></h2>
-</section>
-<section id="lancement-et-test-de-l-application-en-local">
-<h2>Lancement et test de l’application en local.<a class="headerlink" href="#lancement-et-test-de-l-application-en-local" title="Lien vers cette rubrique"></a></h2>
-</section>
-<section id="consulter-les-ressources-modification-des-fichiers-de-migration">
-<h2>Consulter les ressources, modification des fichiers de migration.<a class="headerlink" href="#consulter-les-ressources-modification-des-fichiers-de-migration" title="Lien vers cette rubrique"></a></h2>
-<p>Création de nouvelles tables.
-Implémenter les nouvelles créations.</p>
+  <section id="documentation-de-l-application">
+<h1>Documentation de l’application.<a class="headerlink" href="#documentation-de-l-application" title="Lien vers cette rubrique"></a></h1>
+<section id="sphinx">
+<h2>SPHINX:<a class="headerlink" href="#sphinx" title="Lien vers cette rubrique"></a></h2>
+<p>Récupération sphinx avec pip install (voir requirements.txt)
+Création du dossier docs, puis dans ce dossier lancer:
+sphinx-quickstart
+Congiguration avec config.py
+Complèter index.rst et eventuellement ajouter d’autres pages.rst (ReStructuredText files).
+Valider avec la commande: make html ou (git bash:`` ./make.bat html``)
+Création d’un dossier sphinx_src, afin de choisir les fichiers à afficher,
+et exclure les fichier inutiles. (ex: tables_update.py qui va créer des erreurs
+de compilation.
+Revenir dans le dossier racine du projet, lancer la commande:
+<code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span> <span class="pre">-o</span> <span class="pre">docs</span> <span class="pre">sphinx_src</span></code> pour pouvoir afficher l’ensemble des modules et fonctions.
+A partir de _build/html/index.html nous pouvons alors avoir accès à la documentation du projet avec le navigateur.</p>
+<p>La phase suivante est d’enregistrer le projet sur readthedocs:
+Il s’agit simplement de référencer le projet github sur readthedocs et de valider la compilation.
+Ensuite, Readthedocs propose le lien qui va permettre de visualiser le projet dans le navigateur.</p>
+<p>La mise à jour s’effectuera automatiquement à chaque commit avec git.</p>
 </section>
 </section>
 
@@ -105,8 +111,8 @@ Implémenter les nouvelles créations.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Python-OC-Lettings-FR’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="page2.html" class="btn btn-neutral float-right" title="Résolution des problemes du projet." accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="page4.html" class="btn btn-neutral float-left" title="Mise en place Cicd" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="modules.html" class="btn btn-neutral float-right" title="src" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
