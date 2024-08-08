@@ -1,5 +1,5 @@
 Résolution des problemes du projet.
------------------------------------
+===================================
 Application fonctionnelle.
 Accès à l'administration en ligne.
 Correction du linting avec flake8.

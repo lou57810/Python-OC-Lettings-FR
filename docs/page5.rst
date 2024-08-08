@@ -1,5 +1,5 @@
 Documentation de l'application.
--------------------------------
+===============================
 SPHINX:
 -------
 Récupération sphinx avec pip install (voir requirements.txt)
