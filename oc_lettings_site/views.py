@@ -13,5 +13,4 @@ def custom404(request, *args, **kwargs):
 
 def custom500(request, *args, **kwargs):
     capture_message("Error 500!", level="error")
-    # return render(request, 'error500.html')
     return render(request, 'error500.html', status=500)

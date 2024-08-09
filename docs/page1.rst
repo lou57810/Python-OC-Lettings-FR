@@ -72,6 +72,7 @@ oc_lettings_site_address vers lettings_address
 oc_lettings_site_letting vers lettings_letting
 oc_lettings_site_profile vers profiles_profile
 Nous pouvons alors supprimer models.py et modifier views.py de l'application oc_letting_site.
+Il sera également nécéssaire de redistribuer le dossier templates dans dans leurs applications respectives.
 
 On s'apercoit que le lancement de l'application fonctionne maintenant, mais les liens, ne réagissent plus,
 depuis la page d'acceuil.
@@ -88,7 +89,7 @@ Il sera nécéssaire d'ajouter la bib pandas avec pip.
 ``python tables_updates.py``
 En relancant ``python manage.py runserver`` nous pouvons accèder à l'ingégralité du site.
 
-Fin de cette étape particulièrement exigeante.
+
 
 
 
