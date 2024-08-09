@@ -23,7 +23,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Mise en place Cicd" href="page4.html" />
+    <link rel="next" title="Mise en place du déploiement avec Docker, et le pipleline Cicd:" href="page4.html" />
     <link rel="prev" title="Résolution des problemes du projet." href="page2.html" /> 
 </head>
 
@@ -52,7 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="page1.html">Amélioration de l’architecture modulaire.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page2.html">Résolution des problemes du projet.</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Surveillance de l’application et des erreurs avec Sentry.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="page4.html">Mise en place Cicd</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page4.html">Mise en place du déploiement avec Docker, et le pipleline Cicd:</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page5.html">Documentation de l’application.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">src</a></li>
 </ul>
@@ -83,8 +83,19 @@
              
   <section id="surveillance-de-l-application-et-des-erreurs-avec-sentry">
 <h1>Surveillance de l’application et des erreurs avec Sentry.<a class="headerlink" href="#surveillance-de-l-application-et-des-erreurs-avec-sentry" title="Lien vers cette rubrique"></a></h1>
-<p>Configuration symétrique de Sentry.
-Définition des niveaux de logs pour les différentes parties de l’application.
+<p>Sentry est initialisé dans oc_lettings_site/settings.py :
+# ============= Init Sentry ============= #
+sentry_sdk.init(dsn,</p>
+<blockquote>
+<div><p>integrations=[DjangoIntegration()],
+max_breadcrumbs=50,
+traces_sample_rate=1.0,
+profiles_sample_rate=1.0,
+debug=False,
+)</p>
+</div></blockquote>
+<p>dsn est enregistré dans un fichier .env non commité.</p>
+<p>Définition des niveaux de logs pour les différentes parties de l’application.
 Repèrer les points critiques, et y insérer des logs (ex: try except.)
 Logs avec msg erreurs.
 Vérification des logs avec introduction d’erreurs.</p>
@@ -95,7 +106,7 @@ Vérification des logs avec introduction d’erreurs.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="page2.html" class="btn btn-neutral float-left" title="Résolution des problemes du projet." accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="page4.html" class="btn btn-neutral float-right" title="Mise en place Cicd" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="page4.html" class="btn btn-neutral float-right" title="Mise en place du déploiement avec Docker, et le pipleline Cicd:" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

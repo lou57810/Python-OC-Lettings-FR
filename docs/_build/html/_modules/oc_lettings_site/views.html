@@ -46,6 +46,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../page1.html">Amélioration de l’architecture modulaire.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../page2.html">Résolution des problemes du projet.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../page3.html">Surveillance de l’application et des erreurs avec Sentry.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../page4.html">Mise en place du déploiement avec Docker, et le pipleline Cicd:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../page5.html">Documentation de l’application.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../modules.html">src</a></li>
 </ul>
 
@@ -74,8 +79,7 @@
            <div itemprop="articleBody">
              
   <h1>Code source de oc_lettings_site.views</h1><div class="highlight"><pre>
-<span></span><span class="c1"># from django.http import HttpResponseNotFound</span>
-<span class="kn">from</span> <span class="nn">sentry_sdk</span> <span class="kn">import</span> <span class="n">capture_message</span>
+<span></span><span class="kn">from</span> <span class="nn">sentry_sdk</span> <span class="kn">import</span> <span class="n">capture_message</span>
 <span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
 
 
@@ -98,7 +102,6 @@
 <a class="viewcode-back" href="../../oc_lettings_site.html#oc_lettings_site.views.custom500">[docs]</a>
 <span class="k">def</span> <span class="nf">custom500</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">capture_message</span><span class="p">(</span><span class="s2">&quot;Error 500!&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
-    <span class="c1"># return render(request, &#39;error500.html&#39;)</span>
     <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;error500.html&#39;</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span></div>
 
 </pre></div>

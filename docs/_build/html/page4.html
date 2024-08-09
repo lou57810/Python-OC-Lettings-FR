@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mise en place Cicd &mdash; Documentation Python-OC-Lettings-FR 1.0.0</title>
+  <title>Mise en place du déploiement avec Docker, et le pipleline Cicd: &mdash; Documentation Python-OC-Lettings-FR 1.0.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -52,7 +52,8 @@
 <li class="toctree-l1"><a class="reference internal" href="page1.html">Amélioration de l’architecture modulaire.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page2.html">Résolution des problemes du projet.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="page3.html">Surveillance de l’application et des erreurs avec Sentry.</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Mise en place Cicd</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mise en place du déploiement avec Docker, et le pipleline Cicd:</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#docker">Docker:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#mise-en-place-du-deploiement-avec-docker-cicd-et-render">Mise en place du déploiement avec Docker, Cicd et Render.</a></li>
 </ul>
 </li>
@@ -74,7 +75,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Mise en place Cicd</li>
+      <li class="breadcrumb-item active">Mise en place du déploiement avec Docker, et le pipleline Cicd:</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/page4.rst.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -84,10 +85,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="mise-en-place-cicd">
-<h1>Mise en place Cicd<a class="headerlink" href="#mise-en-place-cicd" title="Lien vers cette rubrique"></a></h1>
+  <section id="mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd">
+<h1>Mise en place du déploiement avec Docker, et le pipleline Cicd:<a class="headerlink" href="#mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd" title="Lien vers cette rubrique"></a></h1>
+<section id="docker">
+<h2>Docker:<a class="headerlink" href="#docker" title="Lien vers cette rubrique"></a></h2>
+<p>Création d’un container et d’une image pour notre application.
+Tout d’abord, installer Docker en local, et s’enregistrer sur Docker Hub.
+Nous devons également créér un Dockerfile à la racine de l’application:
+Ce fichier décrit l’ensemble des étapes à réaliser pour pouvoir lancer notre application.
+Chaque instruction que nous allons donner dans notre Dockerfile va créer une nouvelle layer,
+correspondant à chaque étape de la construction de l’image.
+Créeons également un fichier .dockerignore dans lequel les étapes inutiles peuvent être ignorées.</p>
+<p>Enfin,
+- création de l’image avec la commande suivante:</p>
+<blockquote>
+<div><p><a href="#id1"><span class="problematic" id="id2">``</span></a>docker build -t nom_application . ``
+L’argument -t permet de donner un nom à votre image Docker.
+Cela permet de retrouver plus facilement l” image par la suite.
+Le . est le répertoire où se trouve le Dockerfile ; dans notre cas, à la racine de notre projet.</p>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>lancement du container:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-d</span> <span class="pre">-p</span> <span class="pre">8000:8000</span> <span class="pre">nom_application</span></code> (-p = port 8000:8000 pour Django)
+Le premier port est interne et le deuxième externe.</p>
+</dd>
+</dl>
+</li>
+<li><p>Nous pouvons accèder à notre application en lancant dans le navigateur: <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></p></li>
+</ul>
+</section>
 <section id="mise-en-place-du-deploiement-avec-docker-cicd-et-render">
 <h2>Mise en place du déploiement avec Docker, Cicd et Render.<a class="headerlink" href="#mise-en-place-du-deploiement-avec-docker-cicd-et-render" title="Lien vers cette rubrique"></a></h2>
+<p>Tout d’abord, nous devons rendre notre image publique, et pour celà, nous allons la publier sur Docker Hub,
+en lançant les commandes suivantes:
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">tag</span> <span class="pre">ocr-docker-build:latest</span> <span class="pre">YOUR_USERNAME/nom_application:latest</span></code> (Crée un lien entre l’image créée et</p>
+<blockquote>
+<div><p>l’image à envoyer.)</p>
+</div></blockquote>
+<p>Puis:
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">push</span> <span class="pre">YOUR_USERNAME/nom_application:latest</span></code>
+Voilà, l’image figure sur une “Registry” sur Docker Hub.</p>
 <p>Lancement auto de CI après chaque commit.
 Création d’une image docker tournant en local.
 Push de l’image sur Docker Hub.
