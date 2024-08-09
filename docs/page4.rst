@@ -2,7 +2,7 @@ Mise en place du déploiement avec Docker, et le pipleline Cicd:
 ===============================================================
 Plusieurs étapes seront nécéssaires pour le déploiement de notre application.
 
-Docker
+Docker:
 ------
 Création d'un container et d'une image pour notre application.
 Tout d'abord, installer Docker en local, et s'enregistrer sur Docker Hub.
@@ -10,6 +10,20 @@ Nous devons également créér un Dockerfile à la racine de l'application:
 Ce fichier décrit l'ensemble des étapes à réaliser pour pouvoir lancer notre application.
 Chaque instruction que nous allons donner dans notre Dockerfile va créer une nouvelle layer,
 correspondant à chaque étape de la construction de l'image.
+Comme exemple, à la base:
+``# base image
+FROM python:3.12``
+
+Gunicorn:
+---------
+Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server Web for UNIX.
+Gunicorn joue le rôle d'un serveur web(adapté au langage Python), comme par exemple d'autres comme
+Apache ou Nginx, mais en version légère.
+Nous avons besoin de renseigner sa fonction dans le Dockerfile:
+``CMD ["gunicorn", "--bind", "0.0.0.0:8000", "oc_lettings_site.wsgi:application"]``
+
+Revenons en à Docker:
+---------------------
 Créeons également un fichier .dockerignore dans lequel les étapes inutiles peuvent être ignorées.
 
 Enfin,
@@ -35,10 +49,28 @@ Puis:
 ``docker push YOUR_USERNAME/nom_application:latest``
 Voilà, l'image figure sur une 'Registry' sur Docker Hub.
 
-Lancement auto de CI après chaque commit.
-Création d'une image docker tournant en local.
-Push de l'image sur Docker Hub.
-Déploiement avec image publique.
+Render:
+-------
+Render est une plateforme populaire pour le déploiement de pages web et d’applications.
+Nous avons Docker pour le stockage de notre application, Gunicorn comme Server Web, mais,
+pour le moment, il nous manque un hébergeur.
+C'est ici que Render rentre en fonction pour la diffusion de notre application sur la toile.
+Mais nous devons renseigner quelques variables pour l'utiliser.
+Dans la rubrique Settings:
+- Name: Python-OC-Lettings-FR
+- Région: Frankfurt (EU Central)
+Dans Build & Deploy:
+- Repository: https://github.com/lou57810/Python-OC-Lettings-FR
+-Branch: 'main' (Dans notre cas)
+- Deploy hook: (Render propose de la générer ou de la changer automatiquement.)
+Dans la rubrique Environnement:
+- SECRET_KEY: La variable que nous avons défini dans le fichier à la racine: .env
+
+CircleCi:
+---------
+CircleCi est l'outil manquant au développement de notre application:
+CircleCi permet de tester chaque commit réalisé avec git, et remonter les informations de défaillance ou de succès.
+
 Création d'un fichier local pour les variables d'environnement.
 Configuration Django en mode production.
 Si vous utilisez Render comme solution de déploiement, veillez à désactiver le déploiement automatique à chaque commit.

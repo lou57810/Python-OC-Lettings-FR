@@ -6,6 +6,10 @@ Récupération sphinx avec pip install (voir requirements.txt)
 Création du dossier docs, puis dans ce dossier lancer:
 sphinx-quickstart
 Congiguration avec config.py
+Changement de thème avec 'sphinx_rtd_theme'
+Actuellement il y a conflit avec docutils et 'sphinx_rtd_theme':
+=> retour à la version docutils==0.20.1 (au lieu de 0.21.2) et CicleCi donne un retour 'success'.
+
 Complèter index.rst et eventuellement ajouter d'autres pages.rst (ReStructuredText files).
 Valider avec la commande: make html ou (git bash:`` ./make.bat html``)
 Création d'un dossier sphinx_src, afin de choisir les fichiers à afficher,
