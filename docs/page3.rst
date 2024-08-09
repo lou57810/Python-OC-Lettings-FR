@@ -1,7 +1,8 @@
 Surveillance de l'application et des erreurs avec Sentry.
 =========================================================
 Sentry est initialisé dans oc_lettings_site/settings.py :
-# ============= Init Sentry ============= #
+Init Sentry:
+------------
 sentry_sdk.init(dsn,
                 integrations=[DjangoIntegration()],
                 max_breadcrumbs=50,

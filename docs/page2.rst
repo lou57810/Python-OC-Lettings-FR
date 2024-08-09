@@ -11,6 +11,7 @@ Dorénavant nous avons accès à l'administration en ligne.
 Correction du linting avec flake8:
 ----------------------------------
 Revue du code et nettoyage lignes inutiles.
+``flake8`` renvoie tous les fichier à formater conformément à PEP8.
 
 Gestion des erreurs 404 et 500:
 -------------------------------
