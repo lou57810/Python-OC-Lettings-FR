@@ -42,7 +42,7 @@ sphinxcontrib-htmlhelp==2.0.5
 sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.7
 sphinxcontrib-serializinghtml==1.1.10
-sphinx-autodoc-annotation==1.0.post1
+# sphinx-autodoc-annotation==1.0.post1
 sqlparse==0.5.0
 tzdata==2024.1
 urllib3==2.2.1
