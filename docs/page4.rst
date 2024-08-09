@@ -1,8 +1,9 @@
 Mise en place du déploiement avec Docker, et le pipleline Cicd:
 ===============================================================
+Plusieurs étapes seront nécéssaires pour le déploiement de notre application.
 
-Docker:
--------
+Docker
+------
 Création d'un container et d'une image pour notre application.
 Tout d'abord, installer Docker en local, et s'enregistrer sur Docker Hub.
 Nous devons également créér un Dockerfile à la racine de l'application:
@@ -23,10 +24,10 @@ Enfin,
 - Nous pouvons accèder à notre application en lancant dans le navigateur: http://127.0.0.1:8000
 
 
-
-Mise en place du déploiement avec Docker, Cicd et Render.
----------------------------------------------------------
-Tout d'abord, nous devons rendre notre image publique, et pour celà, nous allons la publier sur Docker Hub,
+Docker Hub
+----------
+Pour l'instant, notre application est joignable en local, mais nous voulons la rendre publique.
+Pour rendre cette image publique,  allons la publier sur Docker Hub,
 en lançant les commandes suivantes:
 ``docker tag ocr-docker-build:latest YOUR_USERNAME/nom_application:latest`` (Crée un lien entre l'image créée et
   l'image à envoyer.)
