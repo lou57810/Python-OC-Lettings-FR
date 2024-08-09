@@ -70,6 +70,13 @@ CircleCi:
 ---------
 CircleCi est l'outil manquant au développement de notre application:
 CircleCi permet de tester chaque commit réalisé avec git, et remonter les informations de défaillance ou de succès.
+Pour celà il nous renseigner quelque indications et en particulier les variables d'environnement:
+- DEBUG = False
+- DEPLOY_HOOK = (valeur générée et figurant dans Render/Deployhook)
+- DOCKER_HUB_PASSWORD = personal_password_hub (Le mien ou le vôtre)
+- DOCKER_HUB_USER_ID = personal_user_id (Le mien ou le vôtre)
+- SECRET_KEY = celui défini dans racine/.env
+- dsn = celui défini dans racine/.env
 
 Création d'un fichier local pour les variables d'environnement.
 Configuration Django en mode production.
