@@ -115,8 +115,14 @@ tout autre détail important du code.</p>
 </section>
 <section id="gestion-de-la-couverture-de-tests-80">
 <h2>Gestion de la couverture de tests (&gt;80%):<a class="headerlink" href="#gestion-de-la-couverture-de-tests-80" title="Lien vers cette rubrique"></a></h2>
-<p>J’ai utilisé pytest-cov, retournant un résultat de 71%, avec la commande <code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">--cov=.</span></code></p>
-<p>Regroupement des tests par applications, en créant un dossier tests dans lettings et profiles.</p>
+<p>Regroupement des tests par applications, en créant un dossier tests dans lettings et profiles.
+Nous pouvons tester en local avec la commande pytest.
+pytest-cov permet de tester le projet:
+Nous devons créer un fichier .coveragrc éliminant les dossiers et fichiers n’ayant pas besoin d’être testés.
+<code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">--cov=.</span></code> renvoie un rapport en console.
+<code class="docutils literal notranslate"><span class="pre">pytest</span> <span class="pre">--cov=.</span> <span class="pre">--cov-report=html</span></code> affiche le rapport en html via le navigateur:
+Cette dernière commande affichera le détail de la couverture ligne par ligne.
+L’outil de couveture mentionnera en rouge le code qui n’a pas été testé.</p>
 </section>
 </section>
 

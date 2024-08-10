@@ -83,7 +83,9 @@
              
   <section id="surveillance-de-l-application-et-des-erreurs-avec-sentry">
 <h1>Surveillance de l’application et des erreurs avec Sentry.<a class="headerlink" href="#surveillance-de-l-application-et-des-erreurs-avec-sentry" title="Lien vers cette rubrique"></a></h1>
-<p>Sentry est initialisé dans oc_lettings_site/settings.py :
+<p>En pré-requis nous devons installer sentry-sdk avec pip:
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--upgrade</span> <span class="pre">sentry-sdk</span></code>
+Sentry est ensuite initialisé dans oc_lettings_site/settings.py :
 Init Sentry:
 ————
 sentry_sdk.init(dsn,</p>
@@ -96,6 +98,17 @@ debug=False,
 )</p>
 </div></blockquote>
 <p>dsn est enregistré dans un fichier .env non commité.</p>
+<p>Nous avons la possibilité de vérifier le fonctionnement de Sentry:
+# urls.py
+from django.urls import path</p>
+<dl class="simple">
+<dt>def trigger_error(request):</dt><dd><p>division_by_zero = 1 / 0</p>
+</dd>
+<dt>urlpatterns = [</dt><dd><p>path(“sentry-debug/”, trigger_error),
+# …</p>
+</dd>
+</dl>
+<p>]</p>
 <p>Définition des niveaux de logs pour les différentes parties de l’application.
 Repèrer les points critiques, et y insérer des logs (ex: try except.)
 Logs avec msg erreurs.

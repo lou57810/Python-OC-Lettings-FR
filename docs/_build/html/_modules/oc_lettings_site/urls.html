@@ -102,9 +102,16 @@
 
 
 
+<div class="viewcode-block" id="trigger_error">
+<a class="viewcode-back" href="../../oc_lettings_site.html#oc_lettings_site.urls.trigger_error">[docs]</a>
+<span class="k">def</span> <span class="nf">trigger_error</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">division_by_zero</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span></div>
+
+
+
 <span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;home&#39;</span><span class="p">),</span>
-    <span class="c1"># path(&#39;error/&#39;, trigger_error),</span>
+    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;sentry-debug/&#39;</span><span class="p">,</span> <span class="n">trigger_error</span><span class="p">),</span>
     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;error/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">custom500</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;oc_lettings_error&#39;</span><span class="p">),</span>
     <span class="n">path</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">custom500</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;oc_lettings_error&#39;</span><span class="p">),</span>
     <span class="n">path</span><span class="p">(</span><span class="s2">&quot;lettings/&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;lettings.urls&quot;</span><span class="p">)),</span>

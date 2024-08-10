@@ -1,6 +1,8 @@
 Surveillance de l'application et des erreurs avec Sentry.
 =========================================================
-Sentry est initialisé dans oc_lettings_site/settings.py :
+En pré-requis nous devons installer sentry-sdk avec pip:
+``pip install --upgrade sentry-sdk``
+Sentry est ensuite initialisé dans oc_lettings_site/settings.py :
 Init Sentry:
 ------------
 sentry_sdk.init(dsn,
@@ -11,6 +13,18 @@ sentry_sdk.init(dsn,
                 debug=False,
                 )
 dsn est enregistré dans un fichier .env non commité.
+
+Nous avons la possibilité de vérifier le fonctionnement de Sentry:
+# urls.py
+from django.urls import path
+
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
+urlpatterns = [
+    path('sentry-debug/', trigger_error),
+    # ...
+]
 
 
 Définition des niveaux de logs pour les différentes parties de l'application.

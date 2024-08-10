@@ -26,6 +26,8 @@ tout autre détail important du code.
 
 Gestion de la couverture de tests (>80%):
 -----------------------------------------
+Regroupement des tests par applications, en créant un dossier tests dans lettings et profiles.
+Nous pouvons tester en local avec la commande pytest.
 pytest-cov permet de tester le projet:
 Nous devons créer un fichier .coveragrc éliminant les dossiers et fichiers n'ayant pas besoin d'être testés.
 ``pytest --cov=.`` renvoie un rapport en console.
@@ -33,7 +35,7 @@ Nous devons créer un fichier .coveragrc éliminant les dossiers et fichiers n'a
 Cette dernière commande affichera le détail de la couverture ligne par ligne.
 L'outil de couveture mentionnera en rouge le code qui n'a pas été testé.
 
-Regroupement des tests par applications, en créant un dossier tests dans lettings et profiles.
+
 
 
 
