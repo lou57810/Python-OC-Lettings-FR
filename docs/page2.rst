@@ -26,7 +26,12 @@ tout autre détail important du code.
 
 Gestion de la couverture de tests (>80%):
 -----------------------------------------
-J'ai utilisé pytest-cov, retournant un résultat de 71%, avec la commande ``pytest --cov=.``
+pytest-cov permet de tester le projet:
+Nous devons créer un fichier .coveragrc éliminant les dossiers et fichiers n'ayant pas besoin d'être testés.
+``pytest --cov=.`` renvoie un rapport en console.
+``pytest --cov=. --cov-report=html`` affiche le rapport en html via le navigateur:
+Cette dernière commande affichera le détail de la couverture ligne par ligne.
+L'outil de couveture mentionnera en rouge le code qui n'a pas été testé.
 
 Regroupement des tests par applications, en créant un dossier tests dans lettings et profiles.
 

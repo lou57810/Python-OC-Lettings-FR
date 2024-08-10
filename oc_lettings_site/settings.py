@@ -31,7 +31,6 @@ sentry_sdk.init(dsn,
                 debug=False,
                 )
 
-
 logging.debug("Lettings_site Program is starting!")
 sentry_sdk.add_breadcrumb(category="logger", message="Program is starting! ", level="info")
 

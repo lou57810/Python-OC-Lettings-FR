@@ -1,0 +1,13 @@
+# .coveragerc to control coverage.py
+[run]
+
+omit =
+    venv/*
+    sphinx_src/*
+    */__init__.py
+    */migrations/*
+    */*/asgi.py
+    */*/wsgi.py
+    manage.py
+    */tests/*
+

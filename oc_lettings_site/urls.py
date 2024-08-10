@@ -18,9 +18,13 @@ def large_resource(request):
     return HttpResponse("Done!")
 
 
+def trigger_error(request):
+    division_by_zero = 1 / 0
+
+
 urlpatterns = [
     path('', index, name='home'),
-    # path('error/', trigger_error),
+    path('sentry-debug/', trigger_error),
     path('error/', views.custom500, name='oc_lettings_error'),
     path('error', views.custom500, name='oc_lettings_error'),
     path("lettings/", include("lettings.urls")),
