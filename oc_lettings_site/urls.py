@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
 from . import views
+from sentry_sdk import capture_message, capture_exception, set_tag
 # from django.conf.urls import handler404, handler500
 
 
@@ -19,7 +20,12 @@ def large_resource(request):
 
 
 def trigger_error(request):
-    division_by_zero = 1 / 0
+    try:
+        division_by_zero = 1 / 0
+    except Exception as e:
+        set_tag("Opération non permise!")
+        capture_exception(e)
+
 
 
 urlpatterns = [
