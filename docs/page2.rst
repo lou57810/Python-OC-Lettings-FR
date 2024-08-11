@@ -34,6 +34,7 @@ Nous devons créer un fichier .coveragrc éliminant les dossiers et fichiers n'a
 ``pytest --cov=. --cov-report=html`` affiche le rapport en html via le navigateur:
 Cette dernière commande affichera le détail de la couverture ligne par ligne.
 L'outil de couveture mentionnera en rouge le code qui n'a pas été testé.
+Nous avons un rappor affichant 81% de réussite, ce qui est acceptable.
 
 
 

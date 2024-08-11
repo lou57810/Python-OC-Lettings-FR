@@ -20,7 +20,7 @@ import logging
 #  enable_tracing=True,
 
 load_dotenv()
-dsn = os.getenv('dsn')
+dsn = os.getenv('DSN')
 
 # ============= Init Sentry ============= #
 sentry_sdk.init(dsn,

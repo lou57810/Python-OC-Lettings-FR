@@ -10,4 +10,4 @@ omit =
     */*/wsgi.py
     manage.py
     */tests/*
-
+    tables_update.py
