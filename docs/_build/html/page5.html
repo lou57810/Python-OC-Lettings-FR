@@ -89,20 +89,21 @@
 <section id="sphinx">
 <h2>SPHINX:<a class="headerlink" href="#sphinx" title="Lien vers cette rubrique"></a></h2>
 <p>Récupération sphinx avec pip install (voir requirements.txt)
-Création du dossier docs, puis dans ce dossier lancer:
+Création du dossier docs, puis depuis ce dossier lancer:
 sphinx-quickstart
-Congiguration avec config.py
+Configuration avec config.py
 Changement de thème avec “sphinx_rtd_theme”
 Actuellement il y a conflit avec docutils et “sphinx_rtd_theme”:
 =&gt; retour à la version docutils==0.20.1 (au lieu de 0.21.2) et CicleCi donne un retour “success”.</p>
 <p>Complèter index.rst et eventuellement ajouter d’autres pages.rst (ReStructuredText files).
-Valider avec la commande: make html ou (git bash:`` ./make.bat html``)
-Création d’un dossier sphinx_src, afin de choisir les fichiers à afficher,
-et exclure les fichier inutiles. (ex: tables_update.py qui va créer des erreurs
-de compilation.
-Revenir dans le dossier racine du projet, lancer la commande:
-<code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span> <span class="pre">-o</span> <span class="pre">docs</span> <span class="pre">sphinx_src</span></code> pour pouvoir afficher l’ensemble des modules et fonctions.
-A partir de _build/html/index.html nous pouvons alors avoir accès à la documentation du projet avec le navigateur.</p>
+Valider avec la commande: <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> ou (git bash:`` ./make.bat html``)
+Nous pouvons maintenant accèder à ou aux pages crées à partic du dossier docs/_builds/html/index.html</p>
+<p>Revenir dans le dossier racine du projet, lancer la commande:
+<code class="docutils literal notranslate"><span class="pre">sphinx-apidoc</span> <span class="pre">-o</span> <span class="pre">docs</span> <span class="pre">.</span></code> pour pouvoir afficher l’ensemble des modules et fonctions depuis <code class="docutils literal notranslate"><span class="pre">.</span></code> les modules
+du dossier racine.
+Cette commande, après avoir modifié index.rst en ajoutant <code class="docutils literal notranslate"><span class="pre">modules</span></code>, et les pages.rst de notre projet de doc,
+affichera également la documentation des différents modules.
+A nouveau relançont <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code> et commitons sur git.</p>
 <p>La phase suivante est d’enregistrer le projet sur readthedocs:
 Il s’agit simplement de référencer le projet github sur readthedocs et de valider la compilation.
 Ensuite, Readthedocs propose le lien qui va permettre de visualiser le projet dans le navigateur.</p>

@@ -130,7 +130,7 @@ Le premier port est interne et le deuxième externe.</p>
 </dd>
 </dl>
 </li>
-<li><p>Nous pouvons accèder à notre application en lancant en local dans le navigateur: <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></p></li>
+<li><p>Nous pouvons accèder à notre application en lancant dans le navigateur: <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></p></li>
 </ul>
 </section>
 <section id="docker-hub">
@@ -154,14 +154,14 @@ pour le moment, il nous manque un hébergeur.
 C’est ici que Render rentre en fonction pour la diffusion de notre application sur la toile.
 Mais nous devons renseigner quelques variables pour l’utiliser.
 Dans la rubrique Settings:
-- Name: Python-OC-Lettings-FR mais github propose déjà ce nom et il suffit de le séléctionner.
+- Name: Python-OC-Lettings-FR
 - Région: Frankfurt (EU Central)
 Dans Build &amp; Deploy:
 - Repository: <a class="reference external" href="https://github.com/lou57810/Python-OC-Lettings-FR">https://github.com/lou57810/Python-OC-Lettings-FR</a>
 -Branch: “main” (Dans notre cas)
 - Deploy hook: (Render propose de la générer ou de la changer automatiquement.)
 Dans la rubrique Environnement:
-- SECRET_KEY: La variable que nous avons défini dans le fichier à la racine: .env</p>
+- SECRET_KEY: La variable que nous avons copiée depuis le fichier à la racine: .env</p>
 </section>
 <section id="circleci">
 <h2>CircleCi:<a class="headerlink" href="#circleci" title="Lien vers cette rubrique"></a></h2>
@@ -174,7 +174,8 @@ Pour celà il nous renseigner quelque indications et en particulier les variable
 - DOCKER_HUB_USER_ID = personal_user_id (Le mien ou le vôtre)
 - SECRET_KEY = celui défini dans racine/.env
 - dsn = celui défini dans racine/.env</p>
-<p>Création d’un fichier local pour les variables d’environnement.
+<p>Circleci vérifie si les test existent et s’il réusissent.
+Création d’un fichier local pour les variables d’environnement.
 Configuration Django en mode production.
 Si vous utilisez Render comme solution de déploiement, veillez à désactiver le déploiement automatique à chaque commit.</p>
 </section>
