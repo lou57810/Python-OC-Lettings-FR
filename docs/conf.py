@@ -7,9 +7,20 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 import os
 import sys
+# import pathlib
 
 
-sys.path.insert(0, os.path.abspath('../'))
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oc_lettings_site.settings')
+sys.path.insert(0, os.path.abspath("../"))
+# sys.path.insert(0, pathlib.Path(__file__).parents[2].resolve().as_posix())
+# sys.path.insert(1, os.path.abspath("."))
+# sys.path.insert(1, "/oc_lettings_site/")
+# sys.path.insert(1, "/lettings/")
+# sys.path.insert(1, "/profiles/")
+# sys.path.insert(1, os.path.abspath('.'))
+# sys.path.insert(1, os.path.abspath('./'))
+# sys.path.insert(1, os.path.abspath('../'))
+# sys.path.insert(1, os.path.abspath('../../'))
 
 project = 'Python-OC-Lettings-FR'
 copyright = '2024, Ben_Oc'

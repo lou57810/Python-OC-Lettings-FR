@@ -64,7 +64,7 @@ Dans Build & Deploy:
 -Branch: 'main' (Dans notre cas)
 - Deploy hook: (Render propose de la générer ou de la changer automatiquement.)
 Dans la rubrique Environnement:
-- SECRET_KEY: La variable que nous avons défini dans le fichier à la racine: .env
+- SECRET_KEY: La variable que nous avons copiée depuis le fichier à la racine: .env
 
 CircleCi:
 ---------
@@ -78,6 +78,7 @@ Pour celà il nous renseigner quelque indications et en particulier les variable
 - SECRET_KEY = celui défini dans racine/.env
 - dsn = celui défini dans racine/.env
 
+Circleci vérifie si les test existent et s'il réusissent.
 Création d'un fichier local pour les variables d'environnement.
 Configuration Django en mode production.
 Si vous utilisez Render comme solution de déploiement, veillez à désactiver le déploiement automatique à chaque commit.

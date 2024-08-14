@@ -3,7 +3,7 @@ Documentation de l'application.
 SPHINX:
 -------
 Récupération sphinx avec pip install (voir requirements.txt)
-Création du dossier docs, puis dans ce dossier lancer:
+Création du dossier docs, puis depuis ce dossier lancer:
 sphinx-quickstart
 Congiguration avec config.py
 Changement de thème avec 'sphinx_rtd_theme'
@@ -12,11 +12,11 @@ Actuellement il y a conflit avec docutils et 'sphinx_rtd_theme':
 
 Complèter index.rst et eventuellement ajouter d'autres pages.rst (ReStructuredText files).
 Valider avec la commande: make html ou (git bash:`` ./make.bat html``)
-Création d'un dossier sphinx_src, afin de choisir les fichiers à afficher,
-et exclure les fichier inutiles. (ex: tables_update.py qui va créer des erreurs
-de compilation.
+Nous pouvons maintenant accèder à ou aux pages crées à partic du dossier docs/_builds/html/index.html
+
 Revenir dans le dossier racine du projet, lancer la commande:
-``sphinx-apidoc -o docs sphinx_src`` pour pouvoir afficher l'ensemble des modules et fonctions.
+``sphinx-apidoc -o docs .`` pour pouvoir afficher l'ensemble des modules et fonctions depuis ``.`` les modules
+du dossier racine.
 A partir de _build/html/index.html nous pouvons alors avoir accès à la documentation du projet avec le navigateur.
 
 La phase suivante est d'enregistrer le projet sur readthedocs:

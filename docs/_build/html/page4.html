@@ -89,24 +89,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-<section id="mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd">
-<h1>Mise en place du déploiement avec Docker, et du pipleline Cicd:<a class="headerlink" href="#mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd" title="Lien vers cette rubrique"></a></h1>
+  <section id="mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd">
+<h1>Mise en place du déploiement avec Docker, et le pipleline Cicd:<a class="headerlink" href="#mise-en-place-du-deploiement-avec-docker-et-le-pipleline-cicd" title="Lien vers cette rubrique"></a></h1>
 <p>Plusieurs étapes seront nécéssaires pour le déploiement de notre application.</p>
-<section id="whitenoise">
-    <p>Dans settings.py ajouter:<br>
-    Dans la section MIDDELWARE=[..."whitenoise.middleware.WhiteNoiseMiddleware",...]<br>
-    Puis créer une section:<br>
-    STATICFILES_STORAGES = {
-    #
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}<br>
-    Explication:<br>
-    With a couple of lines of config WhiteNoise allows your web app to serve its own static files,<br>
-    making it a self-contained unit that can be deployed anywhere without relying on nginx,<br>
-    Amazon S3 or any other external service. </p>
-</section>
 <section id="docker">
 <h2>Docker:<a class="headerlink" href="#docker" title="Lien vers cette rubrique"></a></h2>
 <p>Création d’un container et d’une image pour notre application.
@@ -145,7 +130,7 @@ Le premier port est interne et le deuxième externe.</p>
 </dd>
 </dl>
 </li>
-<li><p>Nous pouvons accèder à notre application en lancant dans le navigateur: <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></p></li>
+<li><p>Nous pouvons accèder à notre application en lancant en local dans le navigateur: <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></p></li>
 </ul>
 </section>
 <section id="docker-hub">
@@ -169,7 +154,7 @@ pour le moment, il nous manque un hébergeur.
 C’est ici que Render rentre en fonction pour la diffusion de notre application sur la toile.
 Mais nous devons renseigner quelques variables pour l’utiliser.
 Dans la rubrique Settings:
-- Name: Python-OC-Lettings-FR
+- Name: Python-OC-Lettings-FR mais github propose déjà ce nom et il suffit de le séléctionner.
 - Région: Frankfurt (EU Central)
 Dans Build &amp; Deploy:
 - Repository: <a class="reference external" href="https://github.com/lou57810/Python-OC-Lettings-FR">https://github.com/lou57810/Python-OC-Lettings-FR</a>
